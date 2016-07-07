@@ -53,7 +53,11 @@ $(function() {
 		    $('#email').val('');
 		    $('#msg').val('');
 		    $('#spambot').val('');
-		    setTimeout(function () { $(".success").fadeOut(1000); }, 5000);
+		    setTimeout(function () { $(formMessages).fadeOut(1000); }, 5000);
+		    setTimeout(function () { 
+		    	$(formMessages).text("");
+		    	$(formMessages).show();
+		    }, 7000);
 		})
 
 		.fail(function(data) {
@@ -67,7 +71,11 @@ $(function() {
 		    } else {
 		        $(formMessages).text('Oops! An error occured and your message could not be sent.');
 		    }
-		    setTimeout(function () { $(".error").fadeOut(2000); }, 5000);
+		    setTimeout(function () { $(formMessages).fadeOut(1000); }, 5000);
+		    setTimeout(function () { 
+		    	$(formMessages).text("");
+		    	$(formMessages).show();
+		    }, 7000);
 		});
 	});
 });
