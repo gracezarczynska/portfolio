@@ -42,6 +42,9 @@ $(function() {
 		
 		.done(function(response) {
 		    // Make sure that the formMessages div has the 'success' class.
+		     $(formMessages).hide();
+		    $(formMessages).text("");
+		    $(formMessages).show();
 		    $(formMessages).removeClass('error');
 		    $(formMessages).addClass('success');
 
@@ -54,14 +57,13 @@ $(function() {
 		    $('#msg').val('');
 		    $('#spambot').val('');
 		    setTimeout(function () { $(formMessages).fadeOut(1000); }, 5000);
-		    setTimeout(function () { 
-		    	$(formMessages).text("");
-		    	$(formMessages).show();
-		    }, 7000);
 		})
 
 		.fail(function(data) {
 		    // Make sure that the formMessages div has the 'error' class.
+		    $(formMessages).hide();
+		    $(formMessages).text("");
+		    $(formMessages).show();
 		    $(formMessages).removeClass('success');
 		    $(formMessages).addClass('error');
 
@@ -72,10 +74,6 @@ $(function() {
 		        $(formMessages).text('Oops! An error occured and your message could not be sent.');
 		    }
 		    setTimeout(function () { $(formMessages).fadeOut(1000); }, 5000);
-		    setTimeout(function () { 
-		    	$(formMessages).text("");
-		    	$(formMessages).show();
-		    }, 7000);
 		});
 	});
 });
